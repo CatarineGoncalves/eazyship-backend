@@ -1,13 +1,12 @@
 import { Router } from "express";
+
+import userRoutes from './users.Routes'
 // // import { Route } express from 'express';
 
 const routes = Router();
 
-routes.get('/user',(request, response) => {
-    return response.json({message: 'hello world'})
-})
-routes.post('/user',(request, response) => {
-    return response.json({message: 'hello world'})
-})
+routes.use('/users', userRoutes)
+
+
 
 export default routes;
