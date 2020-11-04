@@ -1,17 +1,25 @@
 import { Router } from 'express';
 import knex from '../database/connection';
-import userAuth from '../middlewares/authUsers';
+import userAuthTwo from '../middlewares/'
 
 const usersRouter = Router();
 
-usersRouter.get('/', async (request, response) => {
+usersRouter.get('/', userAuthTwo , async (request, response) => {
     const users = await knex('user').select('*');
 
     return response.json(users)
 });
 
+usersRouter.get('/:id', async (request, response) => {
+    const { id } = request.params
 
-usersRouter.post('/', userAuth , async (request, response) => {
+    const users = await knex('user').select(id);
+
+    return response.json(users)
+});
+
+
+usersRouter.post('/', async (request, response) => {
     const { email , senha } = request.body;
 
     const users = { email, senha };

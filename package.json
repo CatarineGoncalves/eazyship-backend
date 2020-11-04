@@ -1,9 +1,15 @@
 {
   "dependencies": {
+    "@types/node": "^14.14.6",
+    "bcryptjs": "^2.4.3",
     "celebrate": "^13.0.3",
+    "crypto": "^1.0.1",
+    "crypto-ts": "^1.0.2",
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
     "knex": "^0.21.12",
+    "mongo-to-knex": "^0.5.0",
+    "mongodb": "^3.6.2",
     "sqlite3": "^5.0.0"
   },
   "scripts": {
